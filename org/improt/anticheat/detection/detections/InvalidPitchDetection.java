@@ -8,6 +8,9 @@ import org.improt.anticheat.punishment.PunishmentFactory;
 import org.improt.anticheat.punishment.PunishmentHandler;
 
 public class InvalidPitchDetection extends IDetection {
+    
+    private final float MAX_PITCH = 90.0001F;
+    
     @Override
     public String getDetectionName() {
         return "InvalidPlayerPitch";
@@ -16,7 +19,7 @@ public class InvalidPitchDetection extends IDetection {
     @Override
     public void check(PlayerContainer collector, Object context) {
         float pitch = ((PacketEvent) context).getPacket().getFloat().read(1);
-        if (pitch > 90.5F || pitch < -90.5F) {
+        if (pitch > MAX_PITCH || pitch < -MAX_PITCH) {
             PunishmentFactory.createPunishment(this).punish(collector, "Invalid Player Pitch");
         }
     }
