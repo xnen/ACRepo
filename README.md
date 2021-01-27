@@ -1,4 +1,4 @@
-# ACRepo
+# [Archived] ACRepo
 Anti-Cheating Plugin Base
 
-For demonstration purposes only, unfinished and stripped of features
+Archived, latest main plugin base for personal Anti-Cheats
